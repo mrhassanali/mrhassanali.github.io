@@ -1,7 +1,7 @@
 import './App.css';
 import {
-  createBrowserRouter,
-  // createHashRouter,
+  // createBrowserRouter,
+  createHashRouter,
   RouterProvider,
 } from "react-router-dom";
 import Navbar from './components/Navbar';
@@ -28,7 +28,7 @@ import ErrorPage from './components/ErrorPage';
 // import Blockchain from './components/cheatsheet/Blockchain';
 
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: "/",
     element: <Navbar />,
