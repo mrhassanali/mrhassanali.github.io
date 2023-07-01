@@ -1,6 +1,5 @@
 import './App.css';
 import {
-  // createBrowserRouter,
   createHashRouter,
   RouterProvider,
 } from "react-router-dom";
