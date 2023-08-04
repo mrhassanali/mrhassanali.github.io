@@ -7,7 +7,6 @@ import MoveTop from "../MoveTop";
 import TopLoadingBar from "../plugin/TopLoadingBar";
 import Spinner from "../plugin/Spinner";
 import InnerHTML from "../plugin/InnerHTML";
-// import InnerHTML from "../plugin/InnerHTML";
 
 
 const javascriptCode = `document.write("Hello World!"); //Show Output in the Browser
@@ -2943,15 +2942,15 @@ const Content = [
     },
     {
         "name": "Window Scroll Events",
-        "link": "#scroll "
+        "link": "#scroll"
     },
     {
         "name": "Location Object",
-        "link": "#location "
+        "link": "#location"
     },
     {
         "name": "History Object",
-        "link": "#history "
+        "link": "#history"
     },
     {
         "name": "Navigator",
@@ -2959,15 +2958,15 @@ const Content = [
     },
     {
         "name": "Local Storage & Session Storage in JavaScript",
-        "link": "#storage  "
+        "link": "#storage"
     },
     {
         "name": "JavaScript JSON",
-        "link": "#JSON "
+        "link": "#JSON"
     },
     {
         "name": "Object Oriented Programming in JavaScript | OOP",
-        "link": "#oop "
+        "link": "#oop"
     },
     {
         "name": "Modules in JavaScript",
@@ -2975,15 +2974,15 @@ const Content = [
     },
     {
         "name": "Promises",
-        "link": "#promises "
+        "link": "#promises"
     },
     {
         "name": "JavaScript AJAX",
-        "link": "#AJAX "
+        "link": "#ajax"
     },
     {
         "name": "JavaScript Fetch API",
-        "link": "#fetch-api "
+        "link": "#fetch-api"
     },
     {
         "name": "JavaScript Async & await",
@@ -3293,7 +3292,7 @@ export default function JavaScript() {
 
         <p>You should not use any of the JavaScript reserved keywords as a variable name. These
             keywords are mentioned in blow section. For example, break or boolean variable names are not valid</p>
-        <table className="table-design">
+        <table className="table-design" style={{width:"100%",fontSize:"19px "}}>
             <tbody>
                 <tr>
                     <td>abstract</td>
@@ -4689,7 +4688,8 @@ keyword.</p>
         
 
         <table className="table-design" style={{"width":"100%","fontSize":"20px"}}>
-            <tr>
+   <tbody>
+   <tr>
                 <th scope="col">#</th>
                 <th scope="col">Property</th>
                 <th scope="col">Description</th>
@@ -4714,6 +4714,7 @@ keyword.</p>
                 <td>element.setAttribute(attribute, value)</td>
                 <td>Change the attribute value of an HTML element</td>
             </tr>
+   </tbody>
         </table>
         <br />
 
@@ -4895,9 +4896,11 @@ markup. </p>
 
 <h1 className="heading1">Keyboard Events</h1>
     <pre className="output">
-<strong> 1 - </strong> Key Press     onKeypress
-<strong> 2 - </strong> Key Up        onKeyup
-<strong> 3 - </strong> Key Down      onKeydown
+        <ol type="1">
+<li> Key Press     onKeypress</li>
+<li> Key Up        onKeyup</li>
+<li> Key Down      onKeydown</li>
+        </ol>
 </pre>
 <button type="button"><a href="https://www.youtube.com/watch?v=_-UBpRUepwc" target="_blank" title="">See Video Tutorial</a></button>
 <p><strong>Example:</strong></p>
@@ -4928,11 +4931,13 @@ markup. </p>
 
 <h1 className="heading1">Window Events</h1>
     <pre className="output">
-<strong> 1 - </strong> window.open() & window.close()  // Already Mention in DOM Window
-<strong> 2 - </strong> Load        onload
-<strong> 3 - </strong> Unload      onunload
-<strong> 4 - </strong> Resize      onresize
-<strong> 5 - </strong> Scroll      onscroll
+        <ol type="1">
+        <li> window.open() & window.close()  // Already Mention in DOM Window </li>
+        <li> Load        onload </li>
+        <li> Unload      onunload </li>
+        <li> Resize      onresize </li>
+        <li> Scroll      onscroll </li>
+        </ol>
 </pre>
 
 <div className="heading2">
@@ -5114,30 +5119,33 @@ markup. </p>
         </div> <br/>
         <pre className="output">
                               <strong>Properties</strong>
-    <strong>01.</strong> Node.baseURI
-    <strong>02.</strong> Node.childNodes
-    <strong>03.</strong> Node.firstChild
-    <strong>04.</strong> Node.lastChild
-    <strong>05.</strong> Node.nextSibling
-    <strong>06.</strong> Node.previousSibling
-    <strong>07.</strong> Node.nodeName
-    <strong>08.</strong> Node.nodeType
-    <strong>09.</strong> Node.nodeValue
-    <strong>10.</strong> Node.ownerDocument
-    <strong>11.</strong> Node.parentElement
-    <strong>12.</strong> Node.parentNode
-    <strong>13.</strong> Node.textContent
+                              <ol type="1">
+    <li> Node.baseURI  </li>
+    <li> Node.childNodes  </li>
+    <li> Node.firstChild  </li>
+    <li> Node.lastChild  </li>
+    <li> Node.nextSibling  </li>
+    <li> Node.previousSibling  </li>
+    <li> Node.nodeName  </li>
+    <li> Node.nodeType  </li>
+    <li> Node.nodeValue  </li>
+    <li> Node.ownerDocument  </li>
+    <li> Node.parentElement  </li>
+    <li> Node.parentNode  </li>
+    <li> Node.textContent  </li>
                              <strong>Methods</strong>
-    <strong>01.</strong> Node.appendChild()
-    <strong>02.</strong> Node.cloneNode()
-    <strong>03.</strong> Node.contains()
-    <strong>04.</strong> Node.getRootNode()
-    <strong>05.</strong> Node.hasChildNodes()
-    <strong>07.</strong> Node.isDefaultNamespace()  // Nor
-    <strong>08.</strong> Node.isEqualNode()
-    <strong>09.</strong> Node.normalize()
-    <strong>10.</strong> Node.removeChild()
-    <strong>11.</strong> Node.replaceChild() </pre>
+    <li> Node.appendChild()  </li>
+    <li> Node.cloneNode()  </li>
+    <li> Node.contains()  </li>
+    <li> Node.getRootNode()  </li>
+    <li> Node.hasChildNodes()  </li>
+    <li> Node.isDefaultNamespace()  // Nor  </li>
+    <li> Node.isEqualNode()  </li>
+    <li> Node.normalize()  </li>
+    <li> Node.removeChild()  </li>
+    <li>Node.replaceChild() </li>
+    </ol>
+    </pre>
         <br/>
 
         <span className="outputh">Code Using In Blow:</span>
@@ -5504,30 +5512,30 @@ markup. </p>
         <ul>
             <li>The <code className="markcode">insertAdjacentText()</code> method <b>inserts a a text</b> into a specified position.</li>
         </ul><br/>
-        <table className="table-design" style={{"width":"100%","fontSize":"20px"}}>
-<tbody>
-    <tr>
-        <th>Value</th>
-        <th>Description</th>
-    </tr>
-<tr>
-    <td>&nbsp;&nbsp;&nbsp;afterbegin</td>
-    <td>After the beginning of the element (first child)</td>
-</tr>
-<tr>
-    <td>&nbsp;&nbsp;&nbsp;afterend</td>
-    <td>After the element</td>
-</tr>
-<tr>
-    <td>&nbsp;&nbsp;&nbsp;beforebegin</td>
-    <td>Before the element</td>
-</tr>
-<tr>
-    <td>&nbsp;&nbsp;&nbsp;beforeend</td>
-    <td>Before the end of the element (last child)</td>
-</tr>
-</tbody>
-</table>
+        <table className="table-design" style={{ width: "100%", fontSize: "20px" }}>
+      <tbody>
+        <tr>
+          <th>Value</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td>&nbsp;&nbsp;&nbsp;afterbegin</td>
+          <td>After the beginning of the element (first child)</td>
+        </tr>
+        <tr>
+          <td>&nbsp;&nbsp;&nbsp;afterend</td>
+          <td>After the element</td>
+        </tr>
+        <tr>
+          <td>&nbsp;&nbsp;&nbsp;beforebegin</td>
+          <td>Before the element</td>
+        </tr>
+        <tr>
+          <td>&nbsp;&nbsp;&nbsp;beforeend</td>
+          <td>Before the end of the element (last child)</td>
+        </tr>
+      </tbody>
+    </table>
     <CodeHighlight code={insertAdjacentTextMethod} language="javascript" />
         
 
@@ -5798,24 +5806,26 @@ But the scrollBy() is count the scroll value where they stay.<strong></strong></
 <div className="heading2">
     <h3>Location Object Methods</h3>
 </div><br></br>
-<table className="table-design" style={{"width":"100%","fontSize":"20px"}}>
-  <tbody><tr>
-    <th style={{"width":"20%"}}>Method</th>
-    <th> Description</th>
-  </tr>
-  <tr>
-    <td>&nbsp;assign()</td>
-    <td>Loads a new document</td>
-  </tr>
-  <tr>
-    <td>&nbsp;reload()</td>
-    <td>Reloads the current document</td>
-    </tr>
-  <tr>
-    <td>&nbsp;replace()</td>
-    <td>Replaces the current document with a new one and back history clear.You can not go to back</td>
-    </tr>
-</tbody></table>
+<table className="table-design" style={{ width: "100%", fontSize: "20px" }}>
+      <tbody>
+        <tr>
+          <th style={{ width: "20%" }}>Method</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td>&nbsp;assign()</td>
+          <td>Loads a new document</td>
+        </tr>
+        <tr>
+          <td>&nbsp;reload()</td>
+          <td>Reloads the current document</td>
+        </tr>
+        <tr>
+          <td>&nbsp;replace()</td>
+          <td>Replaces the current document with a new one and clears back history. You cannot go back</td>
+        </tr>
+      </tbody>
+    </table>
     <CodeHighlight code={LocationObjectMethods} language="javascript" />
         
 <h5 className="heading1" id="history">History Object</h5>
@@ -6156,7 +6166,7 @@ But the scrollBy() is count the scroll value where they stay.<strong></strong></
         <CodeHighlight code={promiseAll} language="javascript" />
             
 
-<h5 className="heading1" id="AJAX">JavaScript AJAX</h5>
+<h5 className="heading1" id="ajax">JavaScript AJAX</h5>
 <ul>
     <li><strong>AJAX</strong> = Asynchronous JavaScript And XML.</li>
     <li>AJAX is a technique for creating fast and dynamic web pages.</li>
@@ -6239,8 +6249,8 @@ JSON Data</p>
 <p><strong>Response in using HTML</strong></p>
     <CodeHighlight code={JavaScriptXMLHttpRequestResponseHTML} language="javascript" />
 
-<h5 className="heading1">JavaScript Fetch API</h5>
-<div className="heading2" id="fetch-api">
+<h5 className="heading1" id="fetch-api">JavaScript Fetch API</h5>
+<div className="heading2">
     <h3> Fetch API </h3>
 </div>
 <ul>
