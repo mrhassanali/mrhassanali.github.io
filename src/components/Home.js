@@ -133,14 +133,14 @@ export default function Home() {
         </h1>
     </div>
 </Link>
-<Link to="/object-oriented-analysis-and-design">
+<a href="notes/mongodb.pdf" download>
     <div className="box">
-        <i className="fab fa-java fa-6x"></i>
+        <img src="/images/mongo-icon.png" width={90} height={90}/>
         <h1 className="tool-head c-title">
-            Object Oriented Analysis and Design
+            MongoDB
         </h1>
     </div>
-</Link>
+</a>
 {/* <Link to="src/DSA.html">
     <div className="box">
         <i className="fas fa-sitemap fa-6x green-color"></i>

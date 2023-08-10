@@ -5,7 +5,7 @@ import Footer from "../Footer";
 import MoveTop from "../MoveTop";
 
 import TopLoadingBar from "../plugin/TopLoadingBar";
-import Spinner from "../plugin/Spinner";
+// import Spinner from "../plugin/Spinner";
 import InnerHTML from "../plugin/InnerHTML";
 
 
@@ -886,7 +886,7 @@ alert("Your Name is "+a);
 document.write(a);
 /*Example 02 End */`;
 const blurMethod= `blur()`;
-const dOMAttributeChildren= `
+const domAttributeChildren= `
 01  Element.children             | Return All the children
 02  Element.classList            | Show List of Class in Element
 03  Element.className            | Add Class Name in Element
@@ -901,16 +901,17 @@ const dOMAttributeChildren= `
 11  Element.getAttributeNode()   | Return complete Attribute
                               Create Attribute & Set Attribute
 12  Element.createAttribute()    | Create New Attribute  
-    Element.setAttributeNode()   | Set Attribute in the Element
-13  Element.hasAttribute()       | Return True/false that attribute present
-14  Element.hasAttributes()      | Return True if attribute found 
-15  Element.querySelector()      | Select First Match Element
-16  Element.querySelectorAll()   | Return Array of Element that match
+13    Element.setAttribute("class", "democlass");   | Set Attribute in the Element
+14    Element.setAttributeNode()   | Set Attribute in the Element
+15  Element.hasAttribute()       | Return True/false that attribute present
+16  Element.hasAttributes()      | Return True if attribute found 
+17  Element.querySelector()      | Select First Match Element
+18  Element.querySelectorAll()   | Return Array of Element that match
                               Remove Attribute from Element
-17  Element.remove()             | Remove Element From Document
-18  Element.removeAttribute()    | Remove Attribute from Element
-19  Element.removeAttributeNode()| Remove Complete Attribute Node
-20  Element.replaceChildren()`;
+19  Element.remove()             | Remove Element From Document
+20  Element.removeAttribute()    | Remove Attribute from Element
+21  Element.removeAttributeNode()| Remove Complete Attribute Node
+22  Element.replaceChildren()`;
 const elementgetAttribute= `<p id="demo" className="name" style="color:red;"></p>
 <script>
 var a = document.getElementById('demo').getAttribute('style');
@@ -4543,7 +4544,7 @@ keyword.</p>
         <div className="heading2">
             <h3> List of All GET &amp; SET Value Methods</h3>
         </div> <br/>
-            <CodeHighlight code={dOMAttributeChildren} language="javascript" lineNumbers="line-numbers"/>
+            <CodeHighlight code={domAttributeChildren} language="javascript" lineNumbers="line-numbers"/>
 
 
         <div className="heading2">
@@ -5406,6 +5407,7 @@ markup. </p>
         <p><code className="markcode">document.createTextNode()</code> Create Text Node.</p>
         <p><code className="markcode">document.createComment()</code> Create a Comment.</p>
 
+        <CodeHighlight code={domcreateMethod} language="javascript" />
         <CodeHighlight code={replaceChildMethod} language="javascript" />
         
 

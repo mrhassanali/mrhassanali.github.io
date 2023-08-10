@@ -7,6 +7,8 @@ import TopLoadingBar from "../plugin/TopLoadingBar";
 import Spinner from "../plugin/Spinner";
 import InnerHTML from "../plugin/InnerHTML";
 
+import ContentList from "../plugin/ContentList";
+
 const createReactApp= `npx create-react-app my-app       // build your default app
 cd my-app                         // enter on the app directory
 npm start                         // run the project
@@ -322,7 +324,137 @@ const handlingComplexForm= `  const [username, setusername] = useState({
   };
   const handleSubmit = (event) => {
     event.preventDefault();
-  };`;
+  };
+  
+  // input Event
+  <input type="text" name="users" value={username.users} placeholder="Username"
+  onChange={inputEvent} />`;
+const objectState =`  // creating object in the states
+const [name, setDetail] = useState({
+  name: "",
+  fatherName: "",
+  emailAddress: "",
+  phoneNumber: "",
+});
+
+// input Event
+const inputEvent = (e) => {
+  // const [value, name] = e.target;
+  const value = e.target.value;
+  const name = e.target.name;
+// name :: take the name of input box
+// if name of box is matched then value should be saved
+  setDetail((preValue) => {
+    if (name === "name") {
+      return {
+        name: value,
+        fatherName: preValue.fatherName,
+        emailAddress: preValue.emailAddress,
+        phoneNumber: preValue.phoneNumber,
+      };
+    } else if (name === "fatherName") {
+      return {
+        name: preValue.name,
+        fatherName: value,
+        emailAddress: preValue.emailAddress,
+        phoneNumber: preValue.phoneNumber,
+      };
+    } else if (name === "emailAddress") {
+      return {
+        name: preValue.name,
+        fatherName: preValue.fatherName,
+        emailAddress: value,
+        phoneNumber: preValue.phoneNumber,
+      };
+    } else if (name === "phoneNumber") {
+      return {
+        name: preValue.name,
+        fatherName: preValue.fatherName,
+        emailAddress: preValue.emailAddress,
+        phoneNumber: value,
+      };
+    }
+  });
+};
+//prevent form to refresh
+const handleForm = (e) => {
+  e.preventDefault();
+};
+
+
+// input Events
+
+<input type="text" name="name"
+value={name.name} onChange={inputEvent} id=""/>
+
+`;
+const shortstateMethod=`  // creating object in the states
+const [name, setDetail] = useState({
+  name: "",
+  fatherName: "",
+  emailAddress: "",
+  phoneNumber: "",
+});
+
+// input Event
+const inputEvent = (event) => {
+  const { name, value } = event.target;
+
+  setDetail((preValue) => {
+    return {
+      // preValue Return the obj that match to name and value
+      ...preValue,
+      [name]: value,
+    };
+  });
+};
+//prevent form to refresh
+const handleForm = (e) => {
+  e.preventDefault();
+};
+
+
+<form onSubmit={handleForm}>
+<h1>Login Details</h1>
+<div>
+  <label>Name : </label>
+  <input
+    type="text"
+    name="name"
+    value={name.name}
+    onChange={inputEvent}
+    id=""
+  />
+</div>
+<div>
+  <label>Father Name : </label>
+  <input
+    type="text"
+    name="fatherName"
+    value={name.fatherName}
+    onChange={inputEvent}
+  />
+</div>
+<div>
+  <label>Email Address : </label>
+  <input
+    type="email"
+    name="emailAddress"
+    value={name.emailAddress}
+    onChange={inputEvent}
+  />
+</div>
+<div>
+  <label>Phone Number : </label>
+  <input
+    type="text"
+    name="phoneNumber"
+    value={name.phoneNumber}
+    onChange={inputEvent}
+  />
+</div>
+<button type="submit">Submit</button>
+</form>`;
 const InstallRedux= `npm i redux react-redux redux-thunk;
 //redux-thunk  = is the middleware`;
 const ActionRedux= `// When user click on the button then increment value
@@ -365,6 +497,45 @@ const folderStructure= `src/
     &#96;-- index.js (Add All Action)
     &#96;-- store.js`;
 // const = ``;
+const Content = [  
+    {
+        "name": `Installation`,
+        "link": "#install-reactjs"
+    },  
+    {
+        "name": `JSX`,
+        "link": "#jsx"
+    },  
+    {
+        "name": `React Components`,
+        "link": "#components"
+    },  
+    {
+        "name": `Props`,
+        "link": "#props"
+    }, 
+    {
+        "name": `React Hooks`,
+        "link": "#hooks"
+    },
+    {
+        "name": `Handling Complex Form in React`,
+        "link": "#complex-state"
+    },
+    {
+        "name": `Context API`,
+        "link": "#contextapi"
+    },
+    {
+        "name": `React Forms`,
+        "link": "#forms"
+    },
+    {
+        "name": `Redux`,
+        "link": "#redux"
+    },
+];
+
 
 export default function ReactSheet() {
     const [loading, setLoading] = useState(true);
@@ -377,12 +548,32 @@ export default function ReactSheet() {
     return (
         <>
             <TopLoadingBar />
-            {loading ? <Spinner /> : (<div>
+            {loading ? <Spinner /> : (
+<>
+            
+<br/>
+            <br/>
+<div className="contentListBox">
+   <div className="box-header">
+       Content List
+   </div>
+   <ul className="list">
+       {
+           Content.map((element, index) => {
+               return (<ContentList key={index} data={element}  />)
+           })
+       }
+
+   </ul>
+</div>
+
+            <div>
+
                 <div className="container">
 
                 <div className="heading2">
-    <h3>What is React? </h3>
-</div>
+                    <h3>What is React? </h3>
+                </div>
 <p>A JavaScript library for building user interfaces. <br/>
 The user interface (U1) is the point of human-computer interaction
 and communication in a device. This can include display screens,
@@ -437,7 +628,7 @@ simplicity and scalability.</li>
 	</ul>
 
 
-<div className="heading2">
+<div className="heading2" id="install-reactjs">
     <h3>Installation </h3>
 </div>
 
@@ -471,7 +662,7 @@ simplicity and scalability.</li>
 </div>
 <CodeHighlight code={importModule} language="javascript" />
 
-<div className="heading2">
+<div className="heading2" id="jsx">
     <h3>JSX in React </h3>
 </div>
 <ul>
@@ -600,7 +791,7 @@ simplicity and scalability.</li>
 </div>
 <CodeHighlight code={reactGreetingMsg} language="javascript" />
 
-<div className="heading2">
+<div className="heading2" id="components">
 <h3> React Components
     <span>
         <a href="https://youtu.be/YcXVT2udeu8?t=381" target="_blank" rel="noreferrer"><i className="fas fa-link" aria-hidden="true"></i></a>
@@ -643,7 +834,7 @@ simplicity and scalability.</li>
 </ul>
 <CodeHighlight code={classBasedComponent} language="javascript" />
 
-<h2>What is Props?</h2>
+<h2 id="props">What is Props?</h2>
 <p>"Props" is a special keyword in React, which stands for properties and is
 being used for passing data from one component to another.</p> <br/>
 <p>In Props the only Parent(Sender) can change the data only.Props are used to pass data from parent components to child components.These props can be updated only by the parent component. It is read-only for child components.</p>
@@ -679,8 +870,10 @@ Unmounting.</p>
 <li> The <code className="markcode">componentDidUpdate()</code> method is invoked as soon as the updating
 happens. The most common use case for the componentDidUpdate() method
 is updating the DOM in response to prop(we said that props cann't change but if the parent can change the props that then the component update.) or state changes. is invoked immediately after updating occurs.</li>
-<pre className="language-javascript"><code className="language-javascript">componentDidUpdate(prevProps, prevState, snapshot);
-//You may call setState() immediately in componentDidUpdate()</code></pre>
+
+
+<CodeHighlight code={`componentDidUpdate(prevProps, prevState, snapshot);
+//You may call setState() immediately in componentDidUpdate()`} language="javascript" />
 
 <li> The <code className="markcode">componentWiIIUnmount()</code> lifecycle method is called just before the
 component is unmounted and destroyed. Usually used to perform cleanups</li>
@@ -690,7 +883,7 @@ component is unmounted and destroyed. Usually used to perform cleanups</li>
 <div className="heading2">
 <h3> Module Import &amp; Export in React
     <span>
-        <a href="https://youtu.be/b7JJCGXlACM?t=568" target="_blank" rel="noreferrer"><i className="fas fa-link" aria-hidden="true"></i></a>
+        <a href="https://youtu.be/b7JJCGXlACM?t=568" target="_blank" rel="noopener"><i className="fas fa-link" aria-hidden="true"></i></a>
     </span>
 </h3>
 </div>
@@ -741,7 +934,7 @@ component is unmounted and destroyed. Usually used to perform cleanups</li>
 array.</p>
 <CodeHighlight code={DeleteModifyArray} language="javascript" />
 
-<div className="heading2">
+<div className="heading2" id="hooks">
 <h3> React Hooks
     <span>
         <a href="https://www.w3schools.com/react/react_hooks.asp" target="_blank" rel="noreferrer"><i className="fas fa-link" aria-hidden="true"></i></a>
@@ -764,7 +957,7 @@ array.</p>
     <li>useParams</li>
     <li>useRef</li>
 </ol>
-<div className="heading2">
+<div className="heading2" id="usestate">
 <h3> useState
     <span>
         <a href="https://www.w3schools.com/react/react_usestate.asp" target="_blank" rel="noreferrer"><i className="fas fa-link" aria-hidden="true"></i></a>
@@ -772,8 +965,8 @@ array.</p>
 </h3>
 </div>
 <CodeHighlight code={useStateHooks} language="javascript" />
-<div className="heading2">
-<h3> React ContextApI
+<div className="heading2" id="contextapi">
+<h3> React ContextApi
     <span>
         <a href="https://reactjs.org/docs/context.html" target="_blank" rel="noreferrer"><i className="fas fa-link" aria-hidden="true"></i></a>
     </span>
@@ -845,7 +1038,7 @@ We can use the <code className="markcode">useRef</code> hooks. It can be used to
     </span>
 </h3>
 </div>
-<div className="heading2">
+<div className="heading2" id="forms">
 <h3> Forms
     <span>
         <a href="https://www.w3schools.com/react/react_forms.asp" target="_blank" rel="noreferrer"><i className="fas fa-link" aria-hidden="true"></i></a>
@@ -854,7 +1047,7 @@ We can use the <code className="markcode">useRef</code> hooks. It can be used to
 </h3>
 </div>
 
-<div className="heading2">
+<div className="heading2" id="complex-state">
 <h3> Handling Complex Form in React
     <span>
     	<a href="https://www.youtube.com/watch?v=ECbcqkqtkTk" target="_blank" rel="noreferrer"><i className="fas fa-link" aria-hidden="true"></i></a>
@@ -863,10 +1056,18 @@ We can use the <code className="markcode">useRef</code> hooks. It can be used to
 </h3>
 </div>
 <p>In the States we can store the object on it.</p>
-
+<h3>Method 01</h3>
 <CodeHighlight code={handlingComplexForm} language="javascript" />
+<h3>Method 02</h3>
+<CodeHighlight code={objectState} language="javascript" />
+<h3 style={
+    {
+        color:"green"
+    }
+}>Method 03 - Short Method</h3>
+<CodeHighlight code={shortstateMethod} language="javascript" />
 
-<div className="heading2">
+<div className="heading2" id="redux">
 <h3> Introduction to Redux
     <span>
         <a href="#" target="_blank" rel="noreferrer"><i className="fas fa-link" aria-hidden="true"></i></a>
@@ -937,7 +1138,8 @@ Reducer Functions</strong><br/></li>
                 </div>
                 <MoveTop />
                 <Footer />
-            </div>)}
+            </div>
+</>)}
         </>
     )
 }
